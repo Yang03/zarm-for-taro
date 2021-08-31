@@ -38,6 +38,13 @@ Zarm （读音 /zɑːm/，中文可发音为 扎姆）的命名，灵感来源�
 - iOS
 - Android 4.0+
 
+## zaro for taro
+
+使用[zarm](https://zarm.design/#/)组件库基于[taro](https://taro-docs.jd.com/taro/docs/README/index.html)开发小程序
+
+## 预览
+
+<img width="200" src="https://cdn-health.zhongan.com/magiccube/resource/s/ZMT4RhnefC.jpg" />
 ## 安装
 
 npm 或 yarn 安装
