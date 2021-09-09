@@ -1,0 +1,400 @@
+@mixin defineTheme($hd) {
+  // 文字色
+  --color-text: #343434;                    // 基本
+  --color-text-inverse: #fff;               // 反色
+  --color-text-placeholder: #a9a9a9;        // 文本框提示
+  --color-text-disabled: #bcbcbc;           // 失效
+  --color-text-caption: #909090;            // 辅助描述
+  --color-link: var(--theme-primary);         // 链接
+  --color-shadow: rgba(56, 56, 56, 0.15);   // 阴影色
+
+  // 背景色
+  --background-active: #e6e6e6;
+  --background-disabled: #f2f2f2;
+
+  // 边框色
+  --border-color: #dcdcdc;
+  --border-disabled: #e6e6e6;
+
+  // 圆角
+  --radius-xs: #{r(2 * $hd)};
+  --radius-sm: #{r(2 * $hd)};
+  --radius-md: #{r(4 * $hd)};
+  --radius-lg: #{r(8 * $hd)};
+  --radius-xl: #{r(8 * $hd)};
+  --radius-round: #{r(1000 * $hd)};
+  --radius-circle: 50%;
+
+  // 水平间距
+  --padding-h-xs: #{r(8 * $hd)};
+  --padding-h-sm: #{r(12 * $hd)};
+  --padding-h-md: #{r(16 * $hd)};
+  --padding-h-lg: #{r(20 * $hd)};
+  --padding-h-xl: #{r(24 * $hd)};
+
+  // 垂直间距
+  --padding-v-xs: #{r(6 * $hd)};
+  --padding-v-sm: #{r(8 * $hd)};
+  --padding-v-md: #{r(12 * $hd)};
+  --padding-v-lg: #{r(16 * $hd)};
+  --padding-v-xl: #{r(18 * $hd)};
+
+  // 字体大小
+  --font-size-xs: #{r(10 * $hd)};;
+  --font-size-sm: #{r(12 * $hd)};;
+  --font-size-md: #{r(14 * $hd)};;
+  --font-size-lg: #{r(16 * $hd)};;
+  --font-size-xl: #{r(18 * $hd)};;
+
+  // 堆叠顺序
+  --zindex-mask: 1000;
+  --zindex-popup: 1100;
+  --zindex-tooltip: 1700;
+
+  // 透明度
+  --opacity-disabled: 0.5;
+  --opacity-mask: 0.5;
+  --opacity-toast: 0.8;
+  --opacity-tooltip: 0.8;
+
+  //阴影
+  --box-shadow-light: 0 #{r(2 * $hd)} #{r(8 * $hd)} 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-dark: 0 #{r(4 * $hd)} #{r(12 * $hd)} rgba(0, 0, 0, 0.2);
+
+  // Components
+
+  // ActionSheet
+  --action-sheet-background: #fff;
+  --action-sheet-active-background: var(--background-active);
+  --action-sheet-margin: 0;
+  --action-sheet-item-height: #{r(50 * $hd)};
+  --action-sheet-item-font-size: #{r(16 * $hd)};
+
+  // activity-indicator
+  --activity-indicator-size-md: #{r(20 * $hd)};
+  --activity-indicator-size-lg: #{r(32 * $hd)};
+  --activity-indicator-path-color: #e6e6e6;
+  --activity-indicator-spinner-color: #989697;
+
+  // Alert
+  --alert-button-height: #{r(50 * $hd)};
+  --alert-button-font-size: #{r(18 * $hd)};
+  --alert-button-background: var(--button-default-background);
+  --alert-button-active-background: var(--background-active);
+
+  // Badge
+  --badge-height: #{r(14 * $hd)};
+  --badge-font-size: var(--font-size-xs);
+  --badge-padding-h: #{r(4 * $hd)};
+  --badge-dot-diameter: #{r(8 * $hd)};
+  --badge-border-radius-rect: var(--radius-sm);
+  --badge-border-radius-round: var(--radius-round);
+  --badge-sup-top: -#{r(4 * $hd)};
+  --badge-text-color: #fff;
+
+  // Button
+  --button-height-xs: #{r(28 * $hd)};
+  --button-height-sm: #{r(36 * $hd)};
+  --button-height-md: #{r(44 * $hd)};
+  --button-height-lg: #{r(52 * $hd)};
+  --button-padding-h-xs: var(--padding-h-xs);
+  --button-padding-h-sm: var(--padding-h-sm);
+  --button-padding-h-md: var(--padding-h-md);
+  --button-padding-h-lg: var(--padding-h-lg);
+  --button-font-size-xs: #{r(12 * $hd)};
+  --button-font-size-sm: #{r(14 * $hd)};
+  --button-font-size-md: #{r(16 * $hd)};
+  --button-font-size-lg: #{r(18 * $hd)};
+  --button-icon-size-xs: #{r(16 * $hd)};
+  --button-icon-size-sm: #{r(18 * $hd)};
+  --button-icon-size-md: #{r(22 * $hd)};
+  --button-icon-size-lg: #{r(26 * $hd)};
+  --button-disabled-opacity: var(--opacity-disabled);
+  --button-disabled-color-ghost: var(--border-disabled);
+  --button-default-background: var(--color-text-inverse);
+  --button-default-border: var(--theme-default);
+  --button-default-color: var(--color-text);
+  --button-default-active-background: var(--background-active);
+  --button-default-active-border: var(--background-active);
+  --button-default-active-color: var(--color-text);
+  --button-default-ghost-border: var(--color-text-inverse);
+  --button-default-ghost-color: var(--color-text-inverse);
+  --button-default-ghost-active-border: var(--background-active);
+  --button-default-ghost-active-color: var(--background-active);
+  --button-default-shadow-color: rgba(230, 230, 230, 0.3);
+  --button-primary-background: var(--theme-primary);
+  --button-primary-border: var(--theme-primary);
+  --button-primary-color: var(--color-text-inverse);
+  --button-primary-active-background: var(--theme-primary-dark);
+  --button-primary-active-border: var(--theme-primary-dark);
+  --button-primary-active-color: rgba(255, 255, 255, 0.4);
+  --button-primary-ghost-border: var(--theme-primary);
+  --button-primary-ghost-color: var(--theme-primary);
+  --button-primary-ghost-active-border: var(--theme-primary-dark);
+  --button-primary-ghost-active-color: var(--theme-primary-dark);
+  --button-primary-shadow-color: rgba(0, 188, 112, 0.3);
+  --button-danger-background: var(--theme-danger);
+  --button-danger-border: var(--theme-danger);
+  --button-danger-color: var(--color-text-inverse);
+  --button-danger-active-background: var(--theme-danger-dark);
+  --button-danger-active-border: var(--theme-danger-dark);
+  --button-danger-active-color: rgba(255, 255, 255, 0.4);
+  --button-danger-ghost-border: var(--theme-danger);
+  --button-danger-ghost-color: var(--theme-danger);
+  --button-danger-ghost-active-border: var(--theme-danger-dark);
+  --button-danger-ghost-active-color: var(--theme-danger-dark);
+  --button-danger-shadow-color: rgba(255, 80, 80, 0.3);
+
+  // Calendar
+  --calendar-height: #{r(45 * $hd)}; // 最小高度
+  --calendar-background: #fff; // 背景色
+  --calendar-week-bar-fontsize: #{r(14 * $hd)}; // 星期条文字大小
+  --calendar-week-bar-background: #f2f2f2; // 星期条文字背景色
+  --calendar-week-bar-color: var(--color-text-caption); // 星期条文字颜色
+  --calendar-section-padding: #{r(15 * $hd)}; // 两边留白间距
+  --calendar-day-fontsize: #{r(16 * $hd)}; // 月份文字大小
+  --calendar-day-title-fontsize: #{r(17 * $hd)}; // 月份title文字大小
+  --calendar-day-color: var(--color-text); // 月份日期文字颜色
+  --calendar-day-today-background: var(--theme-primary-lighter); // 日期今天选中背景颜色
+  --calendar-day-today-color: var(--theme-primary); // 日期今天选中颜色
+  --calendar-day-selected-background: var(--theme-primary); // 日期文字选中背景颜色
+  --calendar-day-selected-color: #fff; // 日期文字选中颜色
+  --calendar-day-selected-shadow: var(--theme-primary-lighter);
+  --calendar-day-range-background: var(--theme-primary-lighter); // 日期文字范围内背景颜色
+  --calendar-day-range-color: var(--theme-primary); // 日期文字范围内颜色
+  --calendar-day-height: #{r(40 * $hd)}; // 日期高度
+
+  // Carousel
+  --carousel-pagination-distance: #{r(8 * $hd)};
+  --carousel-pagination-rect-width: #{r(19 * $hd)};
+  --carousel-pagination-rect-height: #{r(4 * $hd)};
+  --carousel-pagination-rect-border-radius: #{r(1 * $hd)};
+  --carousel-pagination-rect-step: #{r(2 * $hd)};
+  --carousel-pagination-rect-color: rgba(255, 255, 255, 0.6);
+  --carousel-pagination-rect-color-active: #fff;
+
+  // Cell
+  --cell-height: #{r(52 * $hd)};                                    // 最小高度
+  --cell-background: #fff;                              // 背景色
+  --cell-background-active: var(--background-active);     // 激活背景色
+  --cell-line-padding-left: #{r(16 * $hd)};                         // 分隔线左边距
+  --cell-padding-h: #{r(16 * $hd)};                                 // 水平边内距
+  --cell-padding-v: #{r(15 * $hd)};                                 // 纵向边内距
+  --cell-title-color: var(--color-text);                  // 标题文字颜色
+  --cell-title-font-size: #{r(15 * $hd)};                           // 标题文字大小
+  --cell-title-line-height: #{r(22 * $hd)};                         // 标题文字行高
+  --cell-description-color: var(--color-text-caption);    // 标题文字颜色
+  --cell-description-font-size: #{r(15 * $hd)};                     // 描述文字大小
+  --cell-label-width: #{r(100 * $hd)};                              // 表单label宽度
+  --cell-arrow-color: #bcbcbc;                          // 箭头颜色
+  --cell-arrow-length: #{r(10 * $hd)};                              // 箭头长度
+  --cell-arrow-border-width: #{r(2 * $hd)};                         // 箭头粗细
+
+  // Checkbox
+  --checkbox-size: #{r(18 * $hd)};
+  --checkbox-radius: var(--radius-md);
+  --checkbox-background: var(--color-text-inverse);
+  --checkbox-border-color: var(--border-color);
+  --checkbox-active-border-color: var(--theme-primary);
+  --checkbox-disabled-background: var(--background-disabled);
+  --checkbox-disabled-color: #bcbcbc;
+  --checkbox-arrow-color: var(--color-text-inverse);
+
+  // Collapse
+  --collapse-height: #{r(52 * $hd)};
+  --collapse-padding-h: #{r(16 * $hd)};
+  --collapse-padding-v: #{r(15 * $hd)};
+  --collapse-arrow-color: #bcbcbc;
+  --collapse-arrow-disabled-color: #eee;
+
+  // Confirm
+  --confirm-button-height: #{r(50 * $hd)};
+  --confirm-button-font-size: #{r(18 * $hd)};
+  --confirm-button-background: var(--button-default-background);
+  --confirm-button-active-background: var(--background-active);
+
+  // Input
+  --input-clear-icon-width: #{r(16 * $hd)};
+  --input-clear-icon-color: #bcbcbc;
+  --input-padding-v: var(--cell-padding-v);
+  --input-cursor-color: #597cf6;
+  --input-cursor-width: #{r(2 * $hd)};
+  --input-cursor-height: calc(var(--cell-title-line-height) - #{r(4 * $hd)});
+  --input-length-count-color: var(--color-text-disabled);
+  --input-height: #{r(28 * $hd)};
+  --input-line-height: var(--cell-title-line-height);
+
+  // ImagePreview
+  --image-preview-origin-button-background: #2d2d2d;
+
+  // Keyboard
+  --keyboard-background: #fff;
+  --keyboard-item-background: #fff;
+  --keyboard-item-height: #{r(52 * $hd)};
+  --keyboard-item-font-size: #{r(30 * $hd)};
+
+  // Loading
+  --loading-background: rgba(0, 0, 0, var(--opacity-toast));
+
+  // Message
+  --message-min-height-md: #{r(29 * $hd)};
+  --message-min-height-lg: #{r(40 * $hd)};
+  --message-font-size-md: #{r(12 * $hd)};
+  --message-font-size-lg: #{r(14 * $hd)};
+  --message-icon-size-md: #{r(14 * $hd)};
+  --message-icon-size-lg: #{r(16 * $hd)};
+  --message-padding-v-md: #{r(6 * $hd)};
+  --message-padding-h-md: #{r(8 * $hd)};
+  --message-padding-v-lg: #{r(8 * $hd)};
+  --message-padding-h-lg: #{r(12 * $hd)};
+
+  // Modal
+  --modal-background: #fff;
+  --modal-title-font-size: #{r(18 * $hd)};
+  --modal-title-color: var(--color-text);
+  --modal-close-color: #ccc;
+  --modal-close-active-color: #999;
+
+  // NavBar
+  --nav-bar-color: #fdfdfd;
+  --nav-bar-height: #{r(44 * $hd)};
+  --nav-bar-icon-size: #{r(24 * $hd)};
+
+  // NoticeBar
+  --notice-bar-height: #{r(24 * $hd)};
+
+  // Panel
+  --panel-header-color: var(--color-text-caption);
+  --panel-header-font-size: #{r(14 * $hd)};
+  --panel-body-color: var(--color-text);
+  --panel-body-font-size: #{r(15 * $hd)};
+  --panel-body-background: #fff;
+
+  // Picker
+  --picker-background: #fff;
+  --picker-mask-background-start: rgba(255, 255, 255, 0.4);
+  --picker-mask-background-end: rgba(255, 255, 255, 0.8);
+  --picker-header-height: #{r(45 * $hd)};
+  --picker-header-font-size: #{r(16 * $hd)};
+  --picker-header-background: #f7f7f7;
+
+  // Progress
+  --progress-background: #f2f2f2;
+  --progress-width-lg: 100%;
+  --progress-width-md: 100%;
+  --progress-width-sm: #{r(140 * $hd)};
+  --progress-size-lg: #{r(200 * $hd)};
+  --progress-size-md: #{r(150 * $hd)};
+  --progress-size-sm: #{r(80 * $hd)};
+  --progress-font-size-circle-lg: #{r(30 * $hd)};
+  --progress-font-size-circle-md: #{r(24 * $hd)};
+  --progress-font-size-circle-sm: #{r(18 * $hd)};
+
+  // Pull
+  --pull-control-height: #{r(50 * $hd)};
+  --pull-control-font-size: #{r(14 * $hd)};
+
+  // Radio
+  --radio-size: #{r(18 * $hd)};
+  --radio-radius: var(--radius-circle);
+  --radio-background: var(--color-text-inverse);
+  --radio-border-color: var(--border-color);
+  --radio-active-border-color: var(--theme-primary);
+  --radio-disabled-background: var(--background-disabled);
+  --radio-disabled-color: #bcbcbc;
+  --radio-arrow-color: var(--color-text-inverse);
+
+  // SearchBar
+  --search-bar-font-size: #{r(14 * $hd)};
+  --search-bar-background: #fff;
+  --search-bar-inner-background: #f2f2f2;
+
+  // Slider
+  --slider-line-background: var(--border-color);
+  --slider-line-height: #{r(2 * $hd)};
+  --slider-line-dot-width: #{r(6 * $hd)};
+  --slider-line-dot-color: #fff;
+  --slider-vertical-line-width: #{r(2 * $hd)};
+  --slider-handle-size: #{r(24 * $hd)};
+  --slider-handle-size-small: #{r(16 * $hd)};
+  --slider-mark-handle: #{r(24 * $hd)};
+  --slider-mark-size: #{r(15 * $hd)};
+  --slider-handle-background: #fff;
+  --slider-handle-shadow: 0 #{r(1 * $hd)} #{r(3 * $hd)} rgba(0, 0, 0, 0.4);
+
+  // Stepper
+  --stepper-input-background: #fff;
+  --stepper-height-md: #{r(28 * $hd)};
+  --stepper-height-lg: #{r(36 * $hd)};
+  --stepper-icon-font-size-md: #{r(12 * $hd)};
+  --stepper-icon-font-size-lg: #{r(14 * $hd)};
+  --stepper-input-width-md: #{r(50 * $hd)};
+  --stepper-input-width-lg: #{r(60 * $hd)};
+  --stepper-input-disabled: var(--color-text-disabled);
+  --stepper-input-font-size-md: #{r(14 * $hd)};
+  --stepper-input-font-size-lg: #{r(16 * $hd)};
+  --stepper-input-margin-h-md: #{r(4 * $hd)};
+  --stepper-input-margin-h-lg: #{r(4 * $hd)};
+  --stepper-input-padding-h-md: #{r(8 * $hd)};
+  --stepper-input-padding-h-lg: #{r(8 * $hd)};
+
+  // Switch
+  --switch-width: #{r(53 * $hd)};
+  --switch-height: #{r(32 * $hd)};
+  --switch-handle-size: #{r(26 * $hd)};
+  // --switch-width-sm: #{r(41 * $hd)};
+  // --switch-height-sm: #{r(21 * $hd)};
+  --switch-border-color: var(--border-color);
+  --switch-background: var(--border-color);
+  --switch-handle-background: #fff;
+
+  // Tabs
+  --tabs-height: #{r(45 * $hd)};
+  --tabs-item-font-size: var(--font-size-lg);
+  --tabs-line-height: #{r(2 * $hd)};
+  --tabs-item-horizontal-padding: #{r(20 * $hd)};
+  --tabs-item-vertical-padding: #{r(12 * $hd)};
+
+  // Toast
+  --toast-border-radius: #{r(6 * $hd)};
+  --toast-background: rgba(0, 0, 0, var(--opacity-toast));
+  --toast-color: var(--color-text-inverse);
+  --toast-font-size: #{r(13 * $hd)};
+
+  // Tooltip
+  --tooltip-font-size: #{r(12 * $hd)};
+  --tooltip-color: var(--color-text-inverse);
+  --tooltip-arrow-size: #{r(4 * $hd)};
+  --tooltip-padding-v: var(--padding-v-xs);
+  --tooltip-padding-h: var(--padding-h-xs);
+  --tooltip-background: rgba(0, 0, 0, var(--opacity-tooltip));
+
+  // Tabbar
+  --tabbar-height: #{r(50 * $hd)};
+  --tabbar-hidden-bottom: -#{r(50 * $hd)};
+  --tabbar-background: #fff;
+  --tabbar-item-font-size: #{r(12 * $hd)};
+  --tabbar-item-active-color: var(--theme-primary);
+
+  // Wheel
+  --wheel-item-height: #{r(34 * $hd)};
+  --wheel-item-rows: 5;
+  --wheel-item-font-size: #{r(18 * $hd)};
+  --wheel-color: var(--color-text);
+
+  // Icon
+  --icon-font-size-sm: #{r(16 * $hd)};
+  --icon-font-size-md: #{r(24 * $hd)};
+  --icon-font-size-lg: #{r(32 * $hd)};
+  --icon-theme-default: var(--color-text);
+
+  // StackPicker
+  --stack-picker-background: #fff;
+  --stack-picker-shadow: 0 0 #{r(10 * $hd)} rgba(0, 0, 0, .3);
+  --stack-picker-error: #ff5050;
+  --stack-picker-stack-item-font-size: #{r(16 * $hd)};
+  --stack-picker-crumbs-line-height: #{r(24 * $hd)};
+  --stack-picker-stack-item-height: #{r(35 * $hd)};
+  --stack-picker-padding: #{r(20 * $hd)};
+  --stack-picker-left: #{r(60 * $hd)};
+}

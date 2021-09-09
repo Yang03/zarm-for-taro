@@ -44,6 +44,24 @@ const gulpTask = (path?: string, outDir?: string, callback?: () => void) => {
       .pipe(gulp.dest(outDir));
   });
 
+  // gulp.task('taro', () => {
+  //   return gulp
+  //     .src(DIR.js)
+  //     .pipe(
+  //       through2.obj(function z(file, encoding, next) {
+  //         this.push(file.clone());
+  //         const content = file.contents.toString(encoding);
+  //         file.contents = Buffer.from(content.replace(/\/style\/?'/g, "/style/css'")
+  //         .replace(/\/style\/?"/g, '/style/index.taro.css"')
+  //         .replace(/\.scss/g, '.css'));
+  //         file.path = file.path.replace(/index\.js/, 'taro.js');
+  //         this.push(file);
+  //         next();
+  //       }),
+  //     )
+  //     .pipe(gulp.dest(outDir));
+  // });
+
   return gulp.series(['sass', 'css'], callback);
 };
 

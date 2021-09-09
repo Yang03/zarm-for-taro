@@ -1,4 +1,5 @@
 import * as React from 'react';
+import type { ContainerType } from '../utils/dom';
 import { Locale } from '../config-provider/PropsType';
 
 export interface Action {
@@ -17,4 +18,5 @@ export default interface PropsType {
   onCancel?: () => void;
   destroy?: boolean;
   locale?: Locale['ActionSheet'];
+  mountContainer?: ContainerType | false;
 }

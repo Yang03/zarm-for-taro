@@ -147,6 +147,7 @@ export default class Portal extends PureComponent<PortalProps, PortalState> {
       children,
       width,
       visible,
+      className,
     } = this.props;
     const { isPending } = this.state;
     const animationState = visible ? 'enter' : 'leave';
@@ -200,7 +201,7 @@ export default class Portal extends PureComponent<PortalProps, PortalState> {
     }
 
     return (
-      <>
+      <div className={classnames([`${prefixCls}-container`, className])}>
         {this.renderMask()}
         <div
           role="dialog"
@@ -223,7 +224,7 @@ export default class Portal extends PureComponent<PortalProps, PortalState> {
             {children}
           </div>
         </div>
-      </>
+      </div>
     );
   };
 
